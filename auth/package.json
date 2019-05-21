@@ -1,7 +1,7 @@
 {
-  "name": "@jft/theme",
+  "name": "@jft/auth",
   "version": "1.0.0",
-  "description": "An ES5 version of Nebular theme to be used in server side rendering.",
+  "description": "An ES5 version of Nebular auth to be used in server side rendering.",
   "main": "index.js",
   "module": "./index.js",
   "dependencies": {
