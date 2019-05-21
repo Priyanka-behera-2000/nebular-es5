@@ -1,0 +1,27 @@
+{
+  "name": "@jft/security",
+  "version": "1.0.0",
+  "description": "An ES5 version of Nebular security to be used in server side rendering.",
+  "main": "index.js",
+  "module": "./index.js",
+  "dependencies": {
+    "intersection-observer": "0.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neeraj-ducat/nebular-es5.git"
+  },
+  "keywords": [
+    "ES5",
+    "Nebular",
+    "theme"
+  ],
+  "author": "Neeraj Kumar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neeraj-ducat/nebular-es5/issues"
+  },
+  "homepage": "https://github.com/neeraj-ducat/nebular-es5#readme",
+  "schematics": "./schematics/collection.json",
+  "typings": "./index.d.ts"
+}
