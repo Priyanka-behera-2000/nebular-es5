@@ -1,0 +1,25 @@
+@mixin nb-typography {
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: nb-theme(text-color);
+  }
+
+  @each $size in (1, 2, 3, 4, 5, 6) {
+    h#{$size},
+    .h#{$size} {
+      font-size: nb-theme(text-heading-#{$size}-font-size);
+      font-family: nb-theme(text-heading-#{$size}-font-family);
+      font-weight: nb-theme(text-heading-#{$size}-font-weight);
+      line-height: nb-theme(text-heading-#{$size}-line-height);
+    }
+  }
+
+  a {
+    color: nb-theme(link-text-color);
+
+    &:hover,
+    &:focus {
+      color: nb-theme(link-text-hover-color);
+    }
+  }
+}

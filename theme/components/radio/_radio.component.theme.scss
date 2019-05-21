@@ -1,0 +1,69 @@
+/*
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+@mixin nb-radio-theme() {
+  nb-radio {
+    .radio-circle {
+      height: nb-theme(radio-height);
+      width: nb-theme(radio-width);
+      background-color: nb-theme(radio-background-color);
+      border-style: nb-theme(radio-border-style);
+      border-width: nb-theme(radio-border-width);
+    }
+
+    .native-input:focus + .radio-circle {
+      box-shadow: 0 0 0 nb-theme(radio-outline-width) nb-theme(radio-outline-color);
+    }
+
+    .native-input:disabled + .radio-circle {
+      border-color: nb-theme(radio-disabled-border-color);
+    }
+    .native-input:disabled:checked + .radio-circle::before {
+      background-color: nb-theme(radio-disabled-inner-circle-color);
+    }
+    .native-input:disabled ~ .text {
+      color: nb-theme(radio-disabled-text-color);
+    }
+
+    @each $status in nb-get-statuses() {
+      &.status-#{$status} .native-input:enabled + .radio-circle {
+        border-color: nb-theme(radio-#{$status}-border-color);
+      }
+      &.status-#{$status} .native-input:enabled:checked + .radio-circle::before {
+        background-color: nb-theme(radio-#{$status}-inner-circle-color);;
+      }
+
+      &.status-#{$status} .native-input:enabled:focus + .radio-circle {
+        border-color: nb-theme(radio-#{$status}-focus-border-color);
+      }
+      &.status-#{$status} .native-input:enabled:checked:focus + .radio-circle::before {
+        background-color: nb-theme(radio-#{$status}-focus-inner-circle-color);
+      }
+
+      &.status-#{$status} label:hover .native-input:enabled + .radio-circle {
+        border-color: nb-theme(radio-#{$status}-hover-border-color);
+      }
+      &.status-#{$status} label:hover .native-input:checked:enabled + .radio-circle::before {
+        background-color: nb-theme(radio-#{$status}-hover-inner-circle-color);
+      }
+
+      &.status-#{$status} .native-input:enabled:active + .radio-circle {
+        border-color: nb-theme(radio-#{$status}-active-border-color);
+      }
+      &.status-#{$status} .native-input:enabled:checked:active + .radio-circle::before {
+        background-color: nb-theme(radio-#{$status}-active-inner-circle-color);
+      }
+    }
+
+    .text {
+      color: nb-theme(radio-text-color);
+      font-family: nb-theme(radio-text-font-family);
+      font-size: nb-theme(radio-text-font-size);
+      font-weight: nb-theme(radio-text-font-weight);
+      line-height: nb-theme(radio-text-line-height);
+    }
+  }
+}
